@@ -30,3 +30,22 @@ Open your web browser and navigate to `http://127.0.0.1:8000.`
     - (Optional) Enter any specific delivery style in the instructions prompt.
 
     - Click run_experiment() and wait for the model to process the audio. The resulting audio will play automatically and be available in the browser's audio player.
+
+## Project Essentials (Apart from me!)
+              
+`├── environment.yml            # Conda environment specifications and dependencies`
+
+`├── main.py                    # FastAPI server setup and routing`
+
+`├── Qwen_tts.py                # Core TTS generation script using Qwen3TTSModel`
+
+`├── get_text_sentiment.py      # NLP pipeline for emotion classification`
+
+`├── static/output.wav             # The generated audio file served to the frontend`
+
+`└── templates/index.html             # The frontend user interface`
+
+## Models Used
+
+https://huggingface.co/j-hartmann/emotion-english-distilroberta-base
+https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice
