@@ -13,10 +13,12 @@ To run this project, you will need to have Conda (Miniconda or Anaconda) install
 
 ## Installation
 - **Clone the repository (or navigate to the project directory)**:
-`cd Challenge1_AbhayTiwari`
-- **Create the Conda environment using the provided `environment.yml` file:**:
-`conda env create -f environment.yml`
+>`cd Challenge1_AbhayTiwari`
+- **Create the Conda environment using the provided `environment.yml` file**:
+>`conda env create -f environment.yml`
 - **Activate the environment:**
-`conda activate the_empathy_engine`
+>`conda activate the_empathy_engine`
 
 ## Usage
+- Start the FastAPI server using Uvicorn:
+`
