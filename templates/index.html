@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Empathy Engine</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#050505;
+    color:#00ff9c;
+    font-family: "JetBrains Mono", monospace;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.container{
+    width:650px;
+}
+
+.title{
+    font-size:26px;
+    margin-bottom:25px;
+    text-shadow:0 0 12px #00ff9c;
+}
+
+.prompt{
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:14px;
+    background:#0e0e0e;
+    border:1px solid #00ff9c44;
+    color:#00ff9c;
+    font-family:inherit;
+    outline:none;
+}
+
+input:focus{
+    border:1px solid #00ff9c;
+}
+
+button{
+    padding:12px 18px;
+    background:#00ff9c;
+    border:none;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00ffaa;
+}
+
+.log{
+    margin-top:18px;
+    font-size:14px;
+    color:#7affc7;
+}
+
+audio{
+    margin-top:18px;
+    width:100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+> audio.get_empathy()
+</div>
+
+<div class="prompt">abhay@tts:~$ sentence</div>
+<input id="sentence" placeholder="type sentence to emapthise.." />
+
+<div class="prompt">abhay@tts:~$ instructions (optional)</div>
+<input id="instructions" placeholder="e.g. whisper like a secret, or shout (civic sense?)..." />
+
+<button onclick="processSentence()">run_experiment()</button>
+
+<div class="log" id="log">
+system idle...
+</div>
+
+<audio id="player" controls></audio>
+
+</div>
+
+<script>
+
+async function processSentence(){
+
+    const text = document.getElementById("sentence").value
+    const instructions = document.getElementById("instructions").value
+    const log = document.getElementById("log")
+    const player = document.getElementById("player")
+
+    if(!text){
+        log.innerText="ERROR: sentence missing"
+        return
+    }
+
+    log.innerText="initializing..."
+
+    try{
+
+        const response = await fetch("/process",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                sentence:text,
+                instructions:instructions
+            })
+        })
+
+        const data = await response.json()
+
+        player.src = data.audio_url
+        player.play()
+
+        log.innerText="SUCCESS: empathetic audio generated, hire me!"
+
+    }
+
+    catch(err){
+
+        log.innerText="CRITICAL FAILURE: backend not responding"
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
