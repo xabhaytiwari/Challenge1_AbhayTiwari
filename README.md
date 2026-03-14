@@ -20,5 +20,13 @@ To run this project, you will need to have Conda (Miniconda or Anaconda) install
 >`conda activate the_empathy_engine`
 
 ## Usage
-- Start the FastAPI server using Uvicorn:
-`
+1. **Start the FastAPI server using Uvicorn:**
+>`uvicorn main:app --reload`
+2. **Access the Web Interface:**
+Open your web browser and navigate to `http://127.0.0.1:8000.`
+3. **Generate Audio:**
+    - Enter the text you want to convert to speech in the sentence prompt.
+
+    - (Optional) Enter any specific delivery style in the instructions prompt.
+
+    - Click run_experiment() and wait for the model to process the audio. The resulting audio will play automatically and be available in the browser's audio player.
