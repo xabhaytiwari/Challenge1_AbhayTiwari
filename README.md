@@ -43,7 +43,7 @@ Open your web browser and navigate to `http://127.0.0.1:8000.`
 
 `├── static/output.wav             # The generated audio file served to the frontend`
 
-`└── templates/index.html             # The frontend user interface`
+`├── templates/index.html             # The frontend user interface`
 
 ## Models Used
 
