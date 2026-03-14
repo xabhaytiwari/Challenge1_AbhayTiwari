@@ -1,1 +1,2 @@
 # The Empathy Engine
+The Empathy Engine is an intelligent Text-to-Speech (TTS) web application that generates emotionally resonant audio, created as an Assignment for the role of AI Engineer at Darwix AI by **Abhay Tiwari**. By combining state-of-the-art sentiment analysis with a powerful TTS model, the application automatically detects the underlying emotion of the input text and renders the speech accordingly, allowing for custom user instructions to further refine the vocal delivery.
