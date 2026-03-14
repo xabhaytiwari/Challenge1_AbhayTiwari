@@ -29,7 +29,7 @@ Open your web browser and navigate to `http://127.0.0.1:8000.`
 
     - (Optional) Enter any specific delivery style in the instructions prompt.
 
-    - Click run_experiment() and wait for the model to process the audio. The resulting audio will play automatically and be available in the browser's audio player.
+    - Click `run_experiment()` and wait for the model to process the audio. The resulting audio will play automatically and be available in the browser's audio player.
 
 ## Project Essentials (Apart from me!)
               
