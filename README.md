@@ -7,3 +7,16 @@ The Empathy Engine is an intelligent Text-to-Speech (TTS) web application that g
 - **Qwen3 TTS Integration:** Leverages the `Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice model` to generate high-quality, customized voice outputs.
 - **Sleek Terminal UI:** Features a minimalist, retro-hacker aesthetic(me) interface built with raw HTML, CSS, and JavaScript (not a web-developer!).
 - **FastAPI Backend:** Provides a lightweight, asynchronous backend for processing requests and serving static files.
+
+## Prerequisites
+To run this project, you will need to have Conda (Miniconda or Anaconda) installed on your system to manage the dependencies.
+
+## Installation
+- **Clone the repository (or navigate to the project directory)**:
+`cd Challenge1_AbhayTiwari`
+- **Create the Conda environment using the provided `environment.yml` file:**:
+`conda env create -f environment.yml`
+- **Activate the environment:**
+`conda activate the_empathy_engine`
+
+## Usage
